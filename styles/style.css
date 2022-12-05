@@ -7,6 +7,10 @@ body {
     background: #050505;
 }
 
+p {
+    color: #FFFFFF;
+}
+
 .container {
     position: absolute;
     top: 50%;
@@ -21,9 +25,9 @@ body {
     gap: 12px;
 }
 
-.button__join {
+.button__black {
     padding: 0px 32px;
-    width: 202px;
+    width: 100%;
     height: 52px;
 
     color: #FFFFFF;
@@ -38,9 +42,9 @@ body {
     border: none;
 }
 
-.button__create {
+.button__white {
     padding: 0px 32px;
-    width: 202px;
+    width: 100%;
     height: 52px;
 
     color: #000000;
@@ -53,4 +57,28 @@ body {
     background: #FFFFFF;
     border-radius: 10px;
     border: none;
+}
+
+/* Join room */
+
+.input__black {
+    width: 100%;
+    height: 52px;
+
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: left;
+
+    cursor: pointer;
+
+    background: #0F0F0F;
+    border-radius: 10px;
+    border: none;
+}
+.input__black::placeholder{
+    padding-left: 8px;
+
+    color: #333333;
+    font-size: 16px;
 }
