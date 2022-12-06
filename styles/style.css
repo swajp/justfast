@@ -10,7 +10,12 @@ body {
 p {
     color: #FFFFFF;
 }
-
+.logo {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 .container {
     position: absolute;
     top: 50%;
@@ -82,3 +87,45 @@ p {
     color: #333333;
     font-size: 16px;
 }
+
+/* Join room end*/
+
+/* Footer */
+
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    width: 100vw;
+    color: #fff;
+    padding-bottom: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.button__buycoffe {
+    padding-left: 20px;
+    padding-right: 24px;
+    width: auto;
+    height: 44px;
+
+    color: #ECECEC;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+
+    cursor: pointer;
+
+    background: #0D0D0D;
+    border-radius: 10px;
+    border: none;
+}
+.buycoffe-container span {
+    margin-right: 8px;
+}
+
+/* Footer end */

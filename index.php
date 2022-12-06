@@ -5,10 +5,14 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/x-icon" href="/images/logo.svg">
     <link rel="stylesheet" href="styles/style.css">
-    <title>Document</title>
+    <title>justfast | beta </title>
 </head>
 <body>
+<div class="logo">
+    <img src="images/logo.svg">
+</div>
 <div class="container">
     <?php
     if (isset($_POST['join-room'])){
@@ -36,5 +40,10 @@
 
     ?>
 </div>
+<footer>
+    <div class="buycoffe-container">
+        <a href="#"><button class='button__buycoffe'><span>☕</span>Buy Me a Coffee</button></a>
+    </div>
+</footer>
 </body>
 </html>
