@@ -1,15 +1,6 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" type="image/x-icon" href="/images/logo.svg">
-    <link rel="stylesheet" href="styles/style.css">
-    <title>justfast | beta </title>
-</head>
-<body>
+<?php 
+include_once 'header.php';
+?>
 <div class="logo">
     <img src="images/logo.svg">
 </div>
@@ -17,7 +8,7 @@
     <?php
     if (isset($_POST['join-room'])){
         echo "
-        <form class='content' method='post'>
+        <form class='content' action='includes/joinroom.inc.php' method='post'>
             <input class='input__black' type='text' placeholder='Enter room code...' name='' id=''>
             <button class='button__white' name='join-room-button'>Connect to the room</button>
         </form>
@@ -27,7 +18,7 @@
         echo "<p>Creating room...</p>";
     }
     else if (isset($_POST['join-room-button'])){
-        echo "<p>Connecting to the room...</p>>";
+        echo "<p>Connecting to the room...</p>";
     }
     else if (!isset($_POST['join-room']) || !isset($_POST['create-room'])){
         echo "
@@ -40,10 +31,6 @@
 
     ?>
 </div>
-<footer>
-    <div class="buycoffe-container">
-        <a href="#"><button class='button__buycoffe'><span>☕</span>Buy Me a Coffee</button></a>
-    </div>
-</footer>
-</body>
-</html>
+<?php 
+include_once 'footer.php';
+?>
