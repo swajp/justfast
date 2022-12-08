@@ -10,10 +10,6 @@ include_once 'header.php';
         <a href='createroom.php'><button class='button__white'>Create new room</button></a>
     </div>
 </div>
-<footer>
-    <div class="buycoffe-container">
-        <a href="#"><button class='button__buycoffe'><span>☕</span>Buy Me a Coffee</button></a>
-    </div>
-</footer>
-</body>
-</html>
+<?php 
+include_once 'footer.php';
+?>
