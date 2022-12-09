@@ -16,6 +16,10 @@ if ($_POST['submit']){
         header("location: ../joinroom.php?error=invalidroomwner");
         exit();
     }
+    if (invalidCode($conn ,$roomCode) == false) {
+        header("location: ../joinroom.php?error=invalidcode");
+        exit();
+    }
     if (usernameExists($conn, $username) !== false) {
         header("location: ../joinroom.php?error=usernameexists");
         exit();

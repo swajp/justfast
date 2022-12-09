@@ -22,7 +22,7 @@ function emptyInputCode($username, $roomCode){
     return $result;
 }
 
-function invalidusername($username){
+function invalidUsername($username){
     $result;
     if (!preg_match("/^[a-zA-Z0-9]*$/", $username)){
         $result = true;
@@ -31,6 +31,31 @@ function invalidusername($username){
         $result = false;
     }
     return $result;
+}
+
+function invalidCode($conn ,$roomCode){
+    $sql = "SELECT * FROM temprooms WHERE roomCode = ?;";
+    $stmt = mysqli_stmt_init($conn);
+
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location: ../signup.php?error=stmtfailed");
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "s", $roomCode);
+    mysqli_stmt_execute($stmt);
+
+    $resultData = mysqli_stmt_get_result($stmt);
+
+    if ($row = mysqli_fetch_assoc($resultData)) {
+        return $row;
+    }
+    else {
+        $result = false;
+        return $result;
+    }
+
+    mysqli_stmt_close($stmt);
 }
 
 function usernameExists($conn, $username){
