@@ -23,3 +23,7 @@ if ($_POST['submit']){
     createUser($conn, $username);
     joinRoom($conn, $roomCode);
 }
+else {
+    header("location: ../joinroom.php");
+    exit();
+}

@@ -71,6 +71,8 @@ function createUser($conn, $username){
     mysqli_stmt_bind_param($stmt, "s", $username);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
+    session_start();
+    $_SESSION['username'] = $username;
 }
 
 function createRoom($conn, $roomOwner, $roomName, $roomCode){
@@ -85,6 +87,10 @@ function createRoom($conn, $roomOwner, $roomName, $roomCode){
     mysqli_stmt_bind_param($stmt, "sss", $roomOwner, $roomName, $roomCode);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
+    session_start();
+    $_SESSION['connectedRoomName'] = $roomName;
+    $_SESSION['connectedRoomCode'] = $roomCode;
+    $_SESSION['connectedRoomOwner'] = $roomOwner;
     header("location: ../room.php?id=$roomName");
     exit();
 }
@@ -106,6 +112,10 @@ function joinRoom ($conn, $roomCode){
     if ($row = mysqli_fetch_assoc($resultData)) {
         header("location: ../room.php?id=".$row['roomName']."");
         exit();
+        session_start();
+        $_SESSION['connectedRoomName'] = $row['roomName'];
+        $_SESSION['connectedRoomCode'] = $row['roomCode'];
+        $_SESSION['connectedRoomOwner'] = $row['roomOwner'];
     }
     else {
         $result = false;
