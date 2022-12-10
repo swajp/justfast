@@ -135,12 +135,12 @@ function joinRoom ($conn, $roomCode){
     $resultData = mysqli_stmt_get_result($stmt);
 
     if ($row = mysqli_fetch_assoc($resultData)) {
-        header("location: ../room.php?id=".$row['roomName']."");
-        exit();
         session_start();
         $_SESSION['connectedRoomName'] = $row['roomName'];
         $_SESSION['connectedRoomCode'] = $row['roomCode'];
         $_SESSION['connectedRoomOwner'] = $row['roomOwner'];
+        header("location: ../room.php?id=".$row['roomName']."");
+        exit();
     }
     else {
         $result = false;
